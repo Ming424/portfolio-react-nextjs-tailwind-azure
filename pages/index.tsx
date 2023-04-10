@@ -93,16 +93,16 @@ export default function Home() {
                   <span className="">Thierry Chen</span>
                 </h2>
                 <h3 className="text-2xl py-2 md:text-3xl">
-                  Software Developer
+                  Software Developer. Montreal
                 </h3>
                 {/* max-w-wl for max width paragraph */}
                 <p className="text-md py-5 leading-8 text-gray-800 dark:text-white md:text-xl max-w-xl mx-auto">
                   Hello, I'm Thierry, a software engineer specializing in
-                  fullstack development. Focus on Spring, Angular and React.
-                  Sensible to architecture and ux design. With a keen eye for
-                  detail and a deep understanding of programming concepts, I
-                  strive to deliver high-quality software solutions that exceed
-                  expectations.
+                  full-stack development with a focus on Spring, Angular, and
+                  React. I am sensitive to architecture and UX design. With a
+                  keen eye for detail and a deep understanding of programming
+                  concepts, I strive to deliver high-quality software solutions
+                  that exceed expectations.
                 </p>
                 <div className="text-4xl flex justify-center gap-16 py-3 text-gray-600">
                   <div className="group relative">
@@ -148,7 +148,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/*  sm:text-base md:text-sm lg:text-lg */}
           {/* EXPERTISE */}
           <section className="mt-10 md:mt-20 text-xl">
             <div className="grid py-2 grid-cols-1 md:grid-cols-2 gap-4 ">
@@ -209,7 +208,7 @@ export default function Home() {
               <div className="item-card item-system">Docker</div>
               <div className="item-card item-system">Ubuntu</div>
             </div>
-            <div className="grid py-2 grid-cols-4 md:grid-cols-7 gap-3 text-xs sm:text-base md:text-sm lg:text-lg">
+            <div className="grid py-2 grid-cols-4 md:grid-cols-7 gap-3 text-xs sm:text-base md:text-sm lg:text-lg ">
               <div className="item-card item-support">Mockito</div>
               <div className="item-card item-support">Sonar</div>
               <div className="item-card item-support">Postman</div>
@@ -242,7 +241,7 @@ export default function Home() {
                 <p className="text-gray-200">Azure</p>
                 <p className="text-gray-200">SQL</p>
               </div>
-              <div className="text-center shadow-lg  py-10 px-4 rounded-xl my-10  flex-1   hover:brightness-105 hover:scale-105 transition duration-300">
+              <div className="text-center shadow-lg  py-10 px-4 rounded-xl my-10  flex-1   hover:brightness-105 hover:scale-105 transition duration-300 dark:bg-white">
                 <Image className="mx-auto" src={job3} width={70} height={70} />
                 <h3 className="text-lg font-bold pt-8 pb-2 ">Ericsson</h3>
                 <div className="text-xs">Montreal, CA. Intern of 12</div>
@@ -256,7 +255,7 @@ export default function Home() {
                 <p className="text-gray-800">Postman</p>
                 <p className="text-gray-800">Ubuntu</p>
               </div>
-              <div className="text-center shadow-lg  py-10 px-4 rounded-xl my-10  flex-1   hover:brightness-105 hover:scale-105 transition duration-300">
+              <div className="text-center shadow-lg  py-10 px-4 rounded-xl my-10  flex-1   hover:brightness-105 hover:scale-105 transition duration-300 dark:bg-white">
                 <Image
                   className="mx-auto"
                   src={job2}
@@ -275,7 +274,7 @@ export default function Home() {
                 <p className="text-gray-800">SQL</p>
               </div>
               {/* AIRBUS */}
-              <div className="text-center shadow-lg  py-10 px-4 rounded-xl my-10 flex-1  hover:brightness-105 hover:scale-105 transition duration-300">
+              <div className="text-center shadow-lg  py-10 px-4 rounded-xl my-10 flex-1  hover:brightness-105 hover:scale-105 transition duration-300 dark:bg-white">
                 <Image
                   className="mx-auto pt-3"
                   src={job1}
@@ -284,7 +283,7 @@ export default function Home() {
                   alt=""
                 />
                 <h3 className="text-lg font-bold pt-8 pb-2 ">Airbus</h3>
-                <div className="text-xs">Montreal, CA. Intern of 4</div>
+                <div className="text-xs">Mirabel, CA. Intern of 4</div>
                 <p className="py-2">
                   Sole completion of monitoring tool for airplain descrepency
                   report that ease the workflow of liaison engineer team.
