@@ -11,6 +11,11 @@ body {
   cursor: default;
 }
 
+/* dark mode transition */
+main {
+  transition: 500ms;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -121,4 +126,23 @@ a {
 
 .item-support {
   background-image: linear-gradient(to right, #34bfff, #54bedf);
+}
+
+.img-type-1 {
+  background-image: url("../public/bg-img-1.png");
+  background-size: cover;
+  max-width: 100%;
+  -webkit-transition: all 1s ease; /* Safari and Chrome */
+  -moz-transition: all 1s ease; /* Firefox */
+  -ms-transition: all 1s ease; /* IE 9 */
+  -o-transition: all 1s ease; /* Opera */
+  transition: all 1s ease;
+}
+
+.img-type-1:hover {
+  -webkit-transform: scale(1.25); /* Safari and Chrome */
+  -moz-transform: scale(1.25); /* Firefox */
+  -ms-transform: scale(1.25); /* IE 9 */
+  -o-transform: scale(1.25); /* Opera */
+  transform: scale(1.25);
 }

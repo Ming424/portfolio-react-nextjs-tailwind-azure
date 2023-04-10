@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { FaRobot } from "react-icons/fa";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { RiGithubFill, RiReactjsLine } from "react-icons/ri";
 import { IoMdMail } from "react-icons/io";
@@ -8,19 +9,16 @@ import {
   SiAngular,
   SiMicrosoftazure,
 } from "react-icons/si";
-import { BsFiletypeJava } from "react-icons/bs";
-import { AiFillLinkedin } from "react-icons/ai";
+import { BsFiletypeJava, BsListTask } from "react-icons/bs";
+import { AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
 import Image from "next/image";
 import deved from "../public/dev-ed-wave.png";
-import design from "../public/design.png";
-import code from "../public/code.png";
-import consulting from "../public/consulting.png";
 import web1 from "../public/web1.png";
 import web2 from "../public/web2.png";
-import web3 from "../public/web3.png";
-import web4 from "../public/web4.png";
-import web5 from "../public/web5.png";
-import web6 from "../public/web6.png";
+import job1 from "../public/job1.png";
+import job2 from "../public/job2.png";
+import job3 from "../public/job3.png";
+import job4 from "../public/job4.png";
 import { useState } from "react";
 
 export default function Home() {
@@ -28,6 +26,7 @@ export default function Home() {
   const urlGithub = "https://github.com/Ming424";
   const urlLinkedin = "https://www.linkedin.com/in/tianming-chen/";
   const urlMailTo = "mailto:tianming.chen0424@gmail.com";
+  const urlInstagram = "https://www.instagram.com/dream_ins_spiration/";
   const urlResume =
     "https://drive.google.com/file/d/1ws_zF5NWkiuNjjOoplQPygGm3AyGORsH/view?usp=sharing";
 
@@ -41,7 +40,7 @@ export default function Home() {
       </Head>
 
       <section
-        className="bg-gray-100 flex items-center justify-between p-3 md:px-8 text-gray-900"
+        className="p-0 lg:px-8 lg:py-4 bg-gray-100 flex items-center justify-between  text-gray-900"
         aria-label="Global"
       >
         <div className="hidden lg:flex gap-x-12">
@@ -59,10 +58,10 @@ export default function Home() {
 
       <main className="bg-white dark:bg-gray-900 dark:text-white">
         {/* CONTENT WRAPPER */}
-        <div className="px-5  md:px-20 lg:px-40 max-w-screen-2xl mx-auto">
+        <div className="px-2 md:px-20 lg:px-40 max-w-screen-2xl mx-auto">
           <section>
             {/* NAVBAR */}
-            <nav className="py-5 mb-0 sm:py-10 md:mb-12 flex justify-between">
+            <nav className="px-5 py-5 mb-0 sm:py-10 md:mb-12 flex justify-between">
               {/* font-burtons was defined in tailwind config */}
               <h1 className=" text-xl font-burtons">Thierry</h1>
               <ul className="flex items-center">
@@ -87,7 +86,7 @@ export default function Home() {
             </nav>
 
             {/* CONTENT */}
-            <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap text-center p-10">
+            <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap text-center">
               {/* LEFT - DESCRIPTION */}
               <div className="basis-1/3 flex-1">
                 <h2 className="tx-name text-5xl py-2 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-600 font-extrabold md:text-6xl py-6">
@@ -138,14 +137,20 @@ export default function Home() {
               {/* RIGHT - PICTURE */}
               <div className="basis-1/4 flex-1">
                 <div className="relative mx-auto bg-gradient-to-b from-blue-400 to-teal-200 rounded-full w-80 h-80 overflow-hidden md:h-96  md:w-96  hover:ring-4 dark:ring-offset-gray-900 hover:ring-blue-300  hover:ring-offset-4 transition-all duration-200">
-                  <Image src={deved} layout="fill" objectFit="cover"></Image>
+                  <Image
+                    src={deved}
+                    layout="fill"
+                    objectFit="cover"
+                    alt=""
+                  ></Image>
                 </div>
               </div>
             </div>
           </section>
 
+          {/*  sm:text-base md:text-sm lg:text-lg */}
           {/* EXPERTISE */}
-          <section className="mt-10 md:mt-20 ">
+          <section className="mt-10 md:mt-20 text-xl">
             <div className="grid py-2 grid-cols-1 md:grid-cols-2 gap-4 ">
               <div className="item-card item-green">
                 <div className="flex items-center">
@@ -196,7 +201,7 @@ export default function Home() {
                 <div className="font-light">practicing</div>
               </div>
             </div>
-            <div className="grid py-2 grid-cols-4 md:grid-cols-6 gap-3">
+            <div className="grid py-2 grid-cols-4 md:grid-cols-6 gap-3 text-xs sm:text-base md:text-sm lg:text-lg">
               <div className="item-card item-language">SQL</div>
               <div className="item-card item-language">GO</div>
               <div className="item-card item-web">Mongo</div>
@@ -204,7 +209,7 @@ export default function Home() {
               <div className="item-card item-system">Docker</div>
               <div className="item-card item-system">Ubuntu</div>
             </div>
-            <div className="grid py-2 grid-cols-4 md:grid-cols-7 gap-3">
+            <div className="grid py-2 grid-cols-4 md:grid-cols-7 gap-3 text-xs sm:text-base md:text-sm lg:text-lg">
               <div className="item-card item-support">Mockito</div>
               <div className="item-card item-support">Sonar</div>
               <div className="item-card item-support">Postman</div>
@@ -215,146 +220,149 @@ export default function Home() {
             </div>
           </section>
 
-          <section></section>
+          <section className="py-12 mt-12">
+            <h3 className="text-5xl py-1 dark:text-white text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-blue-500 font-extrabold">
+              Experience
+            </h3>
 
-          <section>
-            <div>
-              <h3 className="text-3xl py-1 dark:text-white ">
-                Services I offer
-              </h3>
-              <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-                Since the beginning of my journey as a freelance designer and
-                developer, I've done remote work for
-                <span className="text-teal-500"> agencies </span>
-                consulted for <span className="text-teal-500">startups </span>
-                and collaborated with talanted people to create digital products
-                for both business and consumer use.
-              </p>
-              <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-                I offer from a wide range of services, including brand design,
-                programming and teaching.
-              </p>
-            </div>
             {/* CARD */}
-            <div className="lg:flex gap-10 dark:text-black">
-              <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white  flex-1">
-                <Image
-                  className="mx-auto"
-                  src={design}
-                  width={100}
-                  height={100}
-                />
-                <h3 className="text-lg font-medium pt-8 pb-2  ">
-                  Beautiful Designs
-                </h3>
-                <p className="py-2">
-                  Creating elegant designs suited for your needs following core
-                  design theory.
+            <div className="lg:flex gap-5 dark:text-black ">
+              <div className="bg-cyan-500 shadow-lg shadow-cyan-500/50 text-center text-white font-semibold py-10 px-4 rounded-xl my-10 flex-1  hover:brightness-105 hover:scale-105 transition duration-300">
+                <Image className="mx-auto" src={job4} width={90} height={90} />
+                <h3 className="text-lg font-bold pt-8 pb-2  ">Zimmer Biomet</h3>
+                <div className="text-xs">Montreal, CA. Permanent</div>
+                <p className="py-2  ">
+                  Deliver SaaS product PMP (Personalized Medical Portal) to ease
+                  the business transaction between information throughout
+                  different systems.
                 </p>
-                <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-                <p className="text-gray-800 py-1">Photoshop</p>
-                <p className="text-gray-800 py-1">Illustrator</p>
-                <p className="text-gray-800 py-1">Figma</p>
-                <p className="text-gray-800 py-1">Indesign</p>
+                <h4 className="pt-4 pb-2 text-teal-200">Tech Stack</h4>
+                <p className="text-gray-200">Spring</p>
+                <p className="text-gray-200">Angular</p>
+                <p className="text-gray-200">Azure</p>
+                <p className="text-gray-200">SQL</p>
               </div>
-              <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-                <Image
-                  className="mx-auto"
-                  src={code}
-                  width={100}
-                  height={100}
-                />
-                <h3 className="text-lg font-medium pt-8 pb-2 ">
-                  Code your dream project
-                </h3>
+              <div className="text-center shadow-lg  py-10 px-4 rounded-xl my-10  flex-1   hover:brightness-105 hover:scale-105 transition duration-300">
+                <Image className="mx-auto" src={job3} width={70} height={70} />
+                <h3 className="text-lg font-bold pt-8 pb-2 ">Ericsson</h3>
+                <div className="text-xs">Montreal, CA. Intern of 12</div>
                 <p className="py-2">
-                  Do you have an idea for your next great website? Let's make it
-                  a reality.
+                  Responsible for the test coverage of telemetry system and
+                  deliver daily passage for api regression test.
                 </p>
-                <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-                <p className="text-gray-800 py-1">Photoshop</p>
-                <p className="text-gray-800 py-1">Illustrator</p>
-                <p className="text-gray-800 py-1">Figma</p>
-                <p className="text-gray-800 py-1">Indesign</p>
+                <h4 className="pt-4 pb-2 text-teal-600">Tech Stack</h4>
+                <p className="text-gray-800">Spring</p>
+                <p className="text-gray-800 ">Mockito</p>
+                <p className="text-gray-800">Postman</p>
+                <p className="text-gray-800">Ubuntu</p>
               </div>
-              <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
+              <div className="text-center shadow-lg  py-10 px-4 rounded-xl my-10  flex-1   hover:brightness-105 hover:scale-105 transition duration-300">
                 <Image
                   className="mx-auto"
-                  src={consulting}
+                  src={job2}
                   width={100}
                   height={100}
+                  alt=""
                 />
-                <h3 className="text-lg font-medium pt-8 pb-2 ">Consulting</h3>
+                <h3 className="text-lg font-bold pt-8 pb-2 ">Fiera Capital</h3>
+                <div className="text-xs">Montreal, CA. Intern of 4</div>
                 <p className="py-2">
-                  Are you interested in feedback for your current project? I can
-                  give you tips and tricks to level it up.
+                  Create and maintain automation script to accelerate and verify
+                  data transaction.
                 </p>
-                <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-                <p className="text-gray-800 py-1">Photoshop</p>
-                <p className="text-gray-800 py-1">Illustrator</p>
-                <p className="text-gray-800 py-1">Figma</p>
-                <p className="text-gray-800 py-1">Indesign</p>
+                <h4 className="pt-4 pb-2 text-teal-600">Tech Stack</h4>
+                <p className="text-gray-800">Python</p>
+                <p className="text-gray-800">SQL</p>
+              </div>
+              {/* AIRBUS */}
+              <div className="text-center shadow-lg  py-10 px-4 rounded-xl my-10 flex-1  hover:brightness-105 hover:scale-105 transition duration-300">
+                <Image
+                  className="mx-auto pt-3"
+                  src={job1}
+                  width={100}
+                  height={100}
+                  alt=""
+                />
+                <h3 className="text-lg font-bold pt-8 pb-2 ">Airbus</h3>
+                <div className="text-xs">Montreal, CA. Intern of 4</div>
+                <p className="py-2">
+                  Sole completion of monitoring tool for airplain descrepency
+                  report that ease the workflow of liaison engineer team.
+                </p>
+                <h4 className="pt-4 pb-2 text-teal-600">Tech Stack</h4>
+                <p className="text-gray-800">React</p>
+                <p className="text-gray-800">SQL</p>
+                <p className="text-gray-800">PHP</p>
               </div>
             </div>
           </section>
-          <section>
-            <div>
-              <h3 className="text-3xl py1"></h3>Portofolio
+
+          {/* DO RIGHT NOW */}
+          <section className="overflow-hidden shadow-lg dark:border-solid dark:border rounded-xl flex-1 my-5  grid grid-cols-1 md:grid-cols-3 ">
+            <div className="col-span-2 m-10">
+              <h1 className="text-3xl py-2 text-center flex items-center mx-auto justify-center">
+                <BsListTask className="pt-1" />
+                &nbsp;What I am doing right now
+              </h1>
+              <div className="flex items-center mx-auto justify-center">
+                <ul className="text-xl pl-1 sm:pl-10 pt-3 space-y-3  list-disc marker:text-blue-600">
+                  <li>Learning Azure</li>
+                  <li>
+                    <div className="flex items-center">
+                      Playing AI drawing tools: Stable Diffusion & Midjourney &
+                      etc&nbsp;&nbsp;
+                      <span className="group relative">
+                        <AiFillInstagram
+                          className="text-3xl cursor-pointer hover:scale-125 transition duration-100 text-pink-400"
+                          onClick={() => window.open(urlInstagram, "_blank")}
+                        />
+                      </span>
+                    </div>
+                  </li>
+                  <li>Develop a mobile game using unity</li>
+                  <li>Plannig for personal vlog</li>
+                </ul>
+              </div>
             </div>
+            <div className="img-type-1 col-span-1 bg-black rounded-r-xl"></div>
+          </section>
+
+          {/* DO LATER */}
+          <section className="py-10 dark:border-solid dark:border shadow-lg p-10 rounded-xl">
+            <h1 className="text-3xl py-2 dark:text-white text-center flex items-center mx-auto justify-center">
+              Next Plan
+            </h1>
+            <div className="pb-2 text-center text-xl  text-gray-700 list-disc dark:text-white">
+              <div className="flex justify-center flex items-center">
+                <FaRobot />
+                &nbsp;AI and ML&nbsp;
+                <FaRobot />
+              </div>
+            </div>
+          </section>
+
+          {/*  */}
+          <section>
             <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
               <div className="basis-1/3 flex-1">
-                <Image
+                {/* <Image
                   src={web1}
                   className="rounded-lg object-cover"
                   width={"100%"}
                   height={"100%"}
                   layout="responsive"
-                />
+                  alt=""
+                /> */}
               </div>
               <div className="basis-1/3 flex-1">
-                <Image
+                {/* <Image
                   src={web2}
                   className="rounded-lg object-cover"
                   width={"100%"}
                   height={"100%"}
                   layout="responsive"
-                />
-              </div>
-              <div className="basis-1/3 flex-1">
-                <Image
-                  src={web3}
-                  className="rounded-lg object-cover"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive"
-                />
-              </div>
-              <div className="basis-1/3 flex-1">
-                <Image
-                  src={web4}
-                  className="rounded-lg object-cover"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive"
-                />
-              </div>
-              <div className="basis-1/3 flex-1">
-                <Image
-                  src={web5}
-                  className="rounded-lg object-cover"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive"
-                />
-              </div>
-              <div className="basis-1/3 flex-1">
-                <Image
-                  src={web6}
-                  className="rounded-lg object-cover"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive"
-                />
+                  alt=""
+                /> */}
               </div>
             </div>
           </section>
