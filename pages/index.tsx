@@ -102,7 +102,7 @@ export default function Home() {
                 </h3>
                 {/* max-w-wl for max width paragraph */}
                 <p className="text-md py-5 leading-8 text-gray-800 dark:text-white md:text-xl max-w-xl mx-auto hover:scale-105 transition duration-300">
-                  Hello, I'm Thierry, a software engineer specializing in
+                  Hello, I&quot;m Thierry, a software engineer specializing in
                   full-stack development with a focus on Spring, Angular, and
                   React. I am sensitive to architecture and UX design. With a
                   keen eye for detail and a deep understanding of programming
