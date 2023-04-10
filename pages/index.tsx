@@ -1,19 +1,15 @@
 import Head from "next/head";
-import styles from "@/styles/Home.module.css";
-import { BsFillMoonStarsFill, BsLinkedin } from "react-icons/bs";
-import { RiGithubFill } from "react-icons/ri";
+import { BsFillMoonStarsFill } from "react-icons/bs";
+import { RiGithubFill, RiReactjsLine } from "react-icons/ri";
 import { IoMdMail } from "react-icons/io";
 import {
-  AiFillTwitterCircle,
-  AiFillLinkedin,
-  AiFillYoutube,
-  AiFillGithub,
-  AiOutlineLinkedin,
-  AiOutlineGithub,
-  AiFillMail,
-  AiOutlineMail,
-} from "react-icons/ai";
-import { MdEmail } from "react-icons/md";
+  SiSpring,
+  SiPython,
+  SiAngular,
+  SiMicrosoftazure,
+} from "react-icons/si";
+import { BsFiletypeJava } from "react-icons/bs";
+import { AiFillLinkedin } from "react-icons/ai";
 import Image from "next/image";
 import deved from "../public/dev-ed-wave.png";
 import design from "../public/design.png";
@@ -34,6 +30,7 @@ export default function Home() {
   const urlMailTo = "mailto:tianming.chen0424@gmail.com";
   const urlResume =
     "https://drive.google.com/file/d/1ws_zF5NWkiuNjjOoplQPygGm3AyGORsH/view?usp=sharing";
+
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
@@ -48,7 +45,7 @@ export default function Home() {
         aria-label="Global"
       >
         <div className="hidden lg:flex gap-x-12">
-          <a href="#" className="text-sm font-semibold leading-6 ">
+          <a href="#" className="text-sm font-semibold leading-6">
             Entertainement
           </a>
           <a href="#" className="text-sm font-semibold leading-6">
@@ -80,7 +77,7 @@ export default function Home() {
                   <a
                     className="cursor-pointer bg-gradient-to-r from-cyan-500 to-blue-400 text-white
                     px-4 py-2 rounded-md ml-8 
-                         hover:ring-2 hover:ring-offset-2 hover:ring-blue-400 transition-all  duration-200"
+                         hover:ring-2 dark:ring-offset-gray-900 hover:ring-offset-2 hover:ring-blue-400 transition-all  duration-200"
                     onClick={() => window.open(urlResume, "_blank")}
                   >
                     <span className="">Resume</span>
@@ -140,7 +137,7 @@ export default function Home() {
               </div>
               {/* RIGHT - PICTURE */}
               <div className="basis-1/4 flex-1">
-                <div className="relative mx-auto bg-gradient-to-b from-blue-400 to-teal-200 rounded-full w-80 h-80 overflow-hidden md:h-96  md:w-96  hover:ring-8 hover:ring-blue-300  hover:ring-offset-2 transition-all duration-200">
+                <div className="relative mx-auto bg-gradient-to-b from-blue-400 to-teal-200 rounded-full w-80 h-80 overflow-hidden md:h-96  md:w-96  hover:ring-4 dark:ring-offset-gray-900 hover:ring-blue-300  hover:ring-offset-4 transition-all duration-200">
                   <Image src={deved} layout="fill" objectFit="cover"></Image>
                 </div>
               </div>
@@ -150,56 +147,75 @@ export default function Home() {
           {/* EXPERTISE */}
           <section className="mt-10 md:mt-20 ">
             <div className="grid py-2 grid-cols-1 md:grid-cols-2 gap-4 ">
-              <div className="item-green">
-                <div>Spring</div>
+              <div className="item-card item-green">
+                <div className="flex items-center">
+                  <SiSpring />
+                  &nbsp;Spring
+                </div>
                 <div className="font-light">bean, injection</div>
               </div>
-              <div className="item-language">
-                <div>Java</div>
+              <div className="item-card item-language">
+                <div className="flex items-center">
+                  <BsFiletypeJava className="text-red" />
+                  &nbsp;Java
+                </div>
                 <div className="font-light">
                   stream, thread, thread pool, synchornization
                 </div>
               </div>
-              <div className="item-language">
-                <div>Python</div>
+              <div className="item-card item-language">
+                <div className="flex items-center">
+                  <SiPython />
+                  &nbsp;Python
+                </div>
                 <div className="font-light">leetcode</div>
               </div>
-              <div className="item-web">
-                <div>Angular</div>
+              <div className="item-card item-web">
+                <div className="flex items-center">
+                  <SiAngular />
+                  &nbsp;Angular
+                </div>
                 <div className="font-light">
-                  binding, lifecycle, dependency injection, ts, responsive
+                  binding, lifecycle, injection, ts, responsive
                 </div>
               </div>
-              <div className="item-web">
-                <div>React</div>
+              <div className="item-card item-web">
+                <div className="flex items-center">
+                  <RiReactjsLine className="text-xl" />
+                  &nbsp;React
+                </div>
                 <div className="font-light">
                   react hook, life cycle, responsive
                 </div>
               </div>
-              <div className="item-web">
-                <div>Azure</div>
-                <div className="font-light">learning</div>
+              <div className="item-card item-support">
+                <div className="flex items-center">
+                  <SiMicrosoftazure />
+                  &nbsp;Azure
+                </div>
+                <div className="font-light">practicing</div>
               </div>
             </div>
             <div className="grid py-2 grid-cols-4 md:grid-cols-6 gap-3">
-              <div className="item-language">SQL</div>
-              <div className="item-language">GO</div>
-              <div className="item-database">Mongo</div>
-              <div className="item-web">Vue</div>
-              <div className="item-system">Docker</div>
-              <div className="item-system">Ubuntu</div>
+              <div className="item-card item-language">SQL</div>
+              <div className="item-card item-language">GO</div>
+              <div className="item-card item-web">Mongo</div>
+              <div className="item-card item-web">Vue</div>
+              <div className="item-card item-system">Docker</div>
+              <div className="item-card item-system">Ubuntu</div>
             </div>
-
-            <div className="grid py-2 grid-cols-4 md:grid-cols-8 gap-3">
-              <div className="item-design">Figma</div>
-              <div className="item-design">Photoshop</div>
-              <div className="item-design">Premier</div>
-              <div className="item-web">Unity</div>
-              <div className="item-support">Mockito</div>
-              <div className="item-support">Sonar</div>
-              <div className="item-support">Postman</div>
+            <div className="grid py-2 grid-cols-4 md:grid-cols-7 gap-3">
+              <div className="item-card item-support">Mockito</div>
+              <div className="item-card item-support">Sonar</div>
+              <div className="item-card item-support">Postman</div>
+              <div className="item-card item-design">Figma</div>
+              <div className="item-card item-design">Photoshop</div>
+              <div className="item-card item-design">Premier</div>
+              <div className="item-card item-system">Unity</div>
             </div>
           </section>
+
+          <section></section>
 
           <section>
             <div>
@@ -346,4 +362,7 @@ export default function Home() {
       </main>
     </div>
   );
+}
+function onClickNotAvailable() {
+  throw new Error("Function not implemented.");
 }
