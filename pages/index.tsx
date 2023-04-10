@@ -1,20 +1,25 @@
 import Head from "next/head";
+import { AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
+import {
+  BsFillMoonStarsFill,
+  BsFiletypeJava,
+  BsListTask,
+} from "react-icons/bs";
 import { FaRobot } from "react-icons/fa";
-import { BsFillMoonStarsFill } from "react-icons/bs";
-import { RiGithubFill, RiReactjsLine } from "react-icons/ri";
+import { GiRainbowStar } from "react-icons/gi";
 import { IoMdMail } from "react-icons/io";
+import { RiGithubFill, RiReactjsLine } from "react-icons/ri";
 import {
   SiSpring,
   SiPython,
   SiAngular,
   SiMicrosoftazure,
+  SiNextdotjs,
+  SiReact,
+  SiTailwindcss,
 } from "react-icons/si";
-import { BsFiletypeJava, BsListTask } from "react-icons/bs";
-import { AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
 import Image from "next/image";
 import deved from "../public/dev-ed-wave.png";
-import web1 from "../public/web1.png";
-import web2 from "../public/web2.png";
 import job1 from "../public/job1.png";
 import job2 from "../public/job2.png";
 import job3 from "../public/job3.png";
@@ -89,14 +94,14 @@ export default function Home() {
             <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap text-center">
               {/* LEFT - DESCRIPTION */}
               <div className="basis-1/3 flex-1">
-                <h2 className="tx-name text-5xl py-2 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-600 font-extrabold md:text-6xl py-6">
+                <h2 className="tx-name text-5xl py-2 text-transparent bg-clip-text  bg-gradient-to-r from-teal-400 to-blue-600 font-extrabold md:text-6xl py-6">
                   <span className="">Thierry Chen</span>
                 </h2>
                 <h3 className="text-2xl py-2 md:text-3xl">
                   Software Developer. Montreal
                 </h3>
                 {/* max-w-wl for max width paragraph */}
-                <p className="text-md py-5 leading-8 text-gray-800 dark:text-white md:text-xl max-w-xl mx-auto">
+                <p className="text-md py-5 leading-8 text-gray-800 dark:text-white md:text-xl max-w-xl mx-auto hover:scale-105 transition duration-300">
                   Hello, I'm Thierry, a software engineer specializing in
                   full-stack development with a focus on Spring, Angular, and
                   React. I am sensitive to architecture and UX design. With a
@@ -212,50 +217,70 @@ export default function Home() {
               <div className="item-card item-support">Mockito</div>
               <div className="item-card item-support">Sonar</div>
               <div className="item-card item-support">Postman</div>
+              <div className="item-card item-web">Tailwind CSS</div>
               <div className="item-card item-design">Figma</div>
               <div className="item-card item-design">Photoshop</div>
-              <div className="item-card item-design">Premier</div>
+
               <div className="item-card item-system">Unity</div>
             </div>
           </section>
 
           <section className="py-12 mt-12">
-            <h3 className="text-5xl py-1 dark:text-white text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-blue-500 font-extrabold">
+            <h3 className="text-5xl py-1 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500 font-extrabold w-fit">
               Experience
             </h3>
 
-            {/* CARD */}
-            <div className="lg:flex gap-5 dark:text-black ">
-              <div className="bg-cyan-500 shadow-lg shadow-cyan-500/50 text-center text-white font-semibold py-10 px-4 rounded-xl my-10 flex-1  hover:brightness-105 hover:scale-105 transition duration-300">
-                <Image className="mx-auto" src={job4} width={90} height={90} />
-                <h3 className="text-lg font-bold pt-8 pb-2  ">Zimmer Biomet</h3>
+            {/* JOB */}
+            <div className="lg:flex gap-5">
+              {/* ZIMMER */}
+              <div className="bg-gradient-to-r from-blue-700 to-blue-500 shadow-lg shadow-blue-500/50 text-center text-white font-semibold py-10 px-4 rounded-xl my-10 flex-1 hover:brightness-105 hover:scale-105 transition duration-300">
+                <Image
+                  className="mx-auto"
+                  src={job4}
+                  width={90}
+                  height={90}
+                  alt=""
+                />
+                <div className="text-xl font-extrabold pt-8">Zimmer Biomet</div>
                 <div className="text-xs">Montreal, CA. Permanent</div>
-                <p className="py-2  ">
+                <div className="text-lg font-semibold py-1">
+                  Software Developer
+                </div>
+                <p className="py-2">
                   Deliver SaaS product PMP (Personalized Medical Portal) to ease
                   the business transaction between information throughout
                   different systems.
                 </p>
                 <h4 className="pt-4 pb-2 text-teal-200">Tech Stack</h4>
-                <p className="text-gray-200">Spring</p>
-                <p className="text-gray-200">Angular</p>
-                <p className="text-gray-200">Azure</p>
-                <p className="text-gray-200">SQL</p>
+                <p className="text-gray-100">Spring</p>
+                <p className="text-gray-100">Angular</p>
+                <p className="text-gray-100">Azure</p>
+                <p className="text-gray-100">SQL</p>
+                <p className="text-gray-100">Mockito</p>
               </div>
-              <div className="text-center shadow-lg  py-10 px-4 rounded-xl my-10  flex-1   hover:brightness-105 hover:scale-105 transition duration-300 dark:bg-white">
-                <Image className="mx-auto" src={job3} width={70} height={70} />
-                <h3 className="text-lg font-bold pt-8 pb-2 ">Ericsson</h3>
+              {/* ERICSSON */}
+              <div className="bg-sky-400 shadow-md text-center text-white font-semibold py-10 px-4 rounded-xl my-10  flex-1 hover:brightness-105 hover:scale-105 transition duration-300">
+                <Image
+                  className="mx-auto"
+                  src={job3}
+                  width={70}
+                  height={70}
+                  alt=""
+                />
+                <h3 className="text-lg font-extrabold pt-8 pb-2">Ericsson</h3>
                 <div className="text-xs">Montreal, CA. Intern of 12</div>
                 <p className="py-2">
                   Responsible for the test coverage of telemetry system and
                   deliver daily passage for api regression test.
                 </p>
-                <h4 className="pt-4 pb-2 text-teal-600">Tech Stack</h4>
-                <p className="text-gray-800">Spring</p>
-                <p className="text-gray-800 ">Mockito</p>
-                <p className="text-gray-800">Postman</p>
-                <p className="text-gray-800">Ubuntu</p>
+                <h4 className="pt-4 pb-2 text-teal-200">Tech Stack</h4>
+                <p className="text-gray-100">Spring</p>
+                <p className="text-gray-100 ">Mockito</p>
+                <p className="text-gray-100">Postman</p>
+                <p className="text-gray-100">Ubuntu</p>
               </div>
-              <div className="text-center shadow-lg  py-10 px-4 rounded-xl my-10  flex-1   hover:brightness-105 hover:scale-105 transition duration-300 dark:bg-white">
+              {/* FIERA */}
+              <div className="bg-sky-400 shadow-md text-center text-white font-semibold py-10 px-4 rounded-xl my-10  flex-1   hover:brightness-105 hover:scale-105 transition duration-300">
                 <Image
                   className="mx-auto"
                   src={job2}
@@ -263,18 +288,20 @@ export default function Home() {
                   height={100}
                   alt=""
                 />
-                <h3 className="text-lg font-bold pt-8 pb-2 ">Fiera Capital</h3>
+                <h3 className="text-lg font-extrabold pt-8 pb-2 ">
+                  Fiera Capital
+                </h3>
                 <div className="text-xs">Montreal, CA. Intern of 4</div>
                 <p className="py-2">
                   Create and maintain automation script to accelerate and verify
                   data transaction.
                 </p>
-                <h4 className="pt-4 pb-2 text-teal-600">Tech Stack</h4>
-                <p className="text-gray-800">Python</p>
-                <p className="text-gray-800">SQL</p>
+                <h4 className="pt-4 pb-2 text-teal-200">Tech Stack</h4>
+                <p className="text-gray-100">Python</p>
+                <p className="text-gray-100">SQL</p>
               </div>
               {/* AIRBUS */}
-              <div className="text-center shadow-lg  py-10 px-4 rounded-xl my-10 flex-1  hover:brightness-105 hover:scale-105 transition duration-300 dark:bg-white">
+              <div className="bg-sky-400 shadow-md text-center text-white font-semibold py-10 px-4 rounded-xl my-10 flex-1  hover:brightness-105 hover:scale-105 transition duration-300">
                 <Image
                   className="mx-auto pt-3"
                   src={job1}
@@ -282,29 +309,29 @@ export default function Home() {
                   height={100}
                   alt=""
                 />
-                <h3 className="text-lg font-bold pt-8 pb-2 ">Airbus</h3>
+                <h3 className="text-lg font-extrabold  pt-8 pb-2 ">Airbus</h3>
                 <div className="text-xs">Mirabel, CA. Intern of 4</div>
                 <p className="py-2">
                   Sole completion of monitoring tool for airplain descrepency
                   report that ease the workflow of liaison engineer team.
                 </p>
-                <h4 className="pt-4 pb-2 text-teal-600">Tech Stack</h4>
-                <p className="text-gray-800">React</p>
-                <p className="text-gray-800">SQL</p>
-                <p className="text-gray-800">PHP</p>
+                <h4 className="pt-4 pb-2 text-teal-200">Tech Stack</h4>
+                <p className="text-gray-100">React</p>
+                <p className="text-gray-100">SQL</p>
+                <p className="text-gray-100">PHP</p>
               </div>
             </div>
           </section>
 
           {/* DO RIGHT NOW */}
-          <section className="overflow-hidden shadow-lg dark:border-solid dark:border rounded-xl flex-1 my-5  grid grid-cols-1 md:grid-cols-3 ">
+          <section className="text-gray-100 bg-gradient-to-r from-blue-900 from-15% to-blue-950 text-white overflow-hidden shadow-md shadow-blue-950/50 rounded-xl flex-1 my-5 grid grid-cols-1 md:grid-cols-3 hover:brightness-110 transition duration-300">
             <div className="col-span-2 m-10">
-              <h1 className="text-3xl py-2 text-center flex items-center mx-auto justify-center">
+              <h1 className="text-2xl font-bold text-center flex items-center mx-auto justify-center">
                 <BsListTask className="pt-1" />
                 &nbsp;What I am doing right now
               </h1>
-              <div className="flex items-center mx-auto justify-center">
-                <ul className="text-xl pl-1 sm:pl-10 pt-3 space-y-3  list-disc marker:text-blue-600">
+              <div className="text-gray-300 flex items-center mx-auto justify-center">
+                <ul className="text-xl pl-1 sm:pl-10 pt-3 space-y-3 list-disc marker:text-blue-600">
                   <li>Learning Azure</li>
                   <li>
                     <div className="flex items-center">
@@ -312,7 +339,7 @@ export default function Home() {
                       etc&nbsp;&nbsp;
                       <span className="group relative">
                         <AiFillInstagram
-                          className="text-3xl cursor-pointer hover:scale-125 transition duration-100 text-pink-400"
+                          className="text-3xl cursor-pointer  hover:scale-125 transition duration-100 text-pink-400"
                           onClick={() => window.open(urlInstagram, "_blank")}
                         />
                       </span>
@@ -323,15 +350,15 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-            <div className="img-type-1 col-span-1 bg-black rounded-r-xl"></div>
+            <div className="img-type-1 col-span-1 bg-black rounded-r-xl border-l-4 dark:border-black hover:border-l-2"></div>
           </section>
 
           {/* DO LATER */}
-          <section className="py-10 dark:border-solid dark:border shadow-lg p-10 rounded-xl">
+          <section className="mt-10 text-gray-100 bg-gradient-to-r from-blue-900 from-10% to-blue-950 text-white py-10 shadow-md shadow-blue-950/50 p-10 rounded-xl hover:brightness-110 transition duration-300">
             <h1 className="text-3xl py-2 dark:text-white text-center flex items-center mx-auto justify-center">
               Next Plan
             </h1>
-            <div className="pb-2 text-center text-xl  text-gray-700 list-disc dark:text-white">
+            <div className="pb-2 text-center text-xl  text-gray-300 list-disc dark:text-white">
               <div className="flex justify-center flex items-center">
                 <FaRobot />
                 &nbsp;AI and ML&nbsp;
@@ -362,6 +389,25 @@ export default function Home() {
                   layout="responsive"
                   alt=""
                 /> */}
+              </div>
+            </div>
+          </section>
+
+          {/*  */}
+          <section className="py-10">
+            <h1 className="text-xl py-2 dark:text-white text-center flex items-center mx-auto justify-center">
+              This page is powered by 🚀
+            </h1>
+            <div className="py-2   text-xl  text-gray-700 list-disc dark:text-white">
+              <div className="flex justify-center items-center">
+                <SiReact />
+                &nbsp;React&nbsp;&nbsp;
+                <SiNextdotjs />
+                &nbsp;Next.js&nbsp;&nbsp;
+                <SiTailwindcss />
+                &nbsp;Tailwind&nbsp;&nbsp;
+                <GiRainbowStar />
+                &nbsp;my imagination
               </div>
             </div>
           </section>
