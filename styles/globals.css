@@ -11,6 +11,12 @@ body {
   cursor: default;
 }
 
+/* for snapping */
+html {
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+}
+
 /* dark mode transition */
 main {
   transition: 500ms;
@@ -146,4 +152,9 @@ a {
   -ms-transform: scale(1.25); /* IE 9 */
   -o-transform: scale(1.25); /* Opera */
   transform: scale(1.25);
+}
+
+.section-plan {
+  background-image: url("../public/bg-img-1.png");
+  padding: 0;
 }
