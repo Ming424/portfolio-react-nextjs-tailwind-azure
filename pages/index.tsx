@@ -480,20 +480,20 @@ export default function Home() {
 
             <p className="pt-2 font-serif">
               I understand that your website is often the first impression your
-              customers have of your business, and I&apos;m here to help you make it
-              the best it can be. Whether you need a simple portfolio website or
-              complexe e-commerce platform to demonstrate your product, I have
-              the skills and expertise to deliver. My process is simple and
-              effective. I start by listening to your goals and understanding
-              your audience, then I use my design and development skills to
-              create a website that not only looks great but also performs well.
-              I&apos;m passionate about staying up to date with the latest trends and
-              technologies in web development, so you can trust that your
-              website will be modern and cutting-edge. If you&apos;re looking for a
-              skilled and creative website developer who can bring your ideas to
-              life, then I&apos;m the right person for you. Don&apos;t hesitate to contact
-              me to discuss your project and get started on creating the website
-              of your dreams."
+              customers have of your business, and I&apos;m here to help you
+              make it the best it can be. Whether you need a simple portfolio
+              website or complexe e-commerce platform to demonstrate your
+              product, I have the skills and expertise to deliver. My process is
+              simple and effective. I start by listening to your goals and
+              understanding your audience, then I use my design and development
+              skills to create a website that not only looks great but also
+              performs well. I&apos;m passionate about staying up to date with
+              the latest trends and technologies in web development, so you can
+              trust that your website will be modern and cutting-edge. If
+              you&apos;re looking for a skilled and creative website developer
+              who can bring your ideas to life, then I&apos;m the right person
+              for you. Don&apos;t hesitate to contact me to discuss your project
+              and get started on creating the website of your dreams.
             </p>
 
             <div className="pt-10">
