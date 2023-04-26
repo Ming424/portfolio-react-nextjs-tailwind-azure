@@ -39,9 +39,13 @@ export default function Home() {
   const urlResume =
     "https://drive.google.com/file/d/1ws_zF5NWkiuNjjOoplQPygGm3AyGORsH/view?usp=sharing";
 
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    section.scrollIntoView({ behavior: "smooth" });
+  const scrollToSection = (sectionId?: string) => {
+    if (sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   };
 
   return (
