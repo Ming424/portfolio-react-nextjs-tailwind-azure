@@ -496,7 +496,7 @@ export default function Home() {
               and get started on creating the website of your dreams.
             </p>
 
-            <div className="pt-10">
+            <div className="py-40">
               <div className="text-2xl mx-auto flex mx-auto justify-center font-semibold">
                 If you are interested about this collaboration
               </div>
