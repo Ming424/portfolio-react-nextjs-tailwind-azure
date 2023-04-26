@@ -442,8 +442,8 @@ export default function Home() {
         </section>
 
         {/* SHOWCASE  */}
-        {/* <section id="projects" className="mt-36">
-          <div className="px-2 md:px-20 max-w-screen-2xl mx-auto">
+        <section id="projects" className="mt-36">
+          {/* <div className="px-2 md:px-20 max-w-screen-2xl mx-auto">
             <h3 className="text-5xl pb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500 font-extrabold w-fit">
               Projects
             </h3>
@@ -465,8 +465,8 @@ export default function Home() {
                 />
               </div>
             </div>
-          </div>
-        </section> */}
+          </div> */}
+        </section>
 
         {/* BUILD WEBSITE */}
         <section className="py-12 mt-12">
