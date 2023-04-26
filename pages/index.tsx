@@ -440,8 +440,6 @@ export default function Home() {
                 <Image
                   src={web1}
                   className="rounded-lg object-cover"
-                  width={"100%"}
-                  height={"100%"}
                   layout="responsive"
                   alt=""
                 />
@@ -450,8 +448,6 @@ export default function Home() {
                 <Image
                   src={web2}
                   className="rounded-lg object-cover"
-                  width={"100%"}
-                  height={"100%"}
                   layout="responsive"
                   alt=""
                 />
