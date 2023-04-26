@@ -32,6 +32,8 @@ import { title } from "process";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
+  const [copyState, setCopyState] = useState("Copy");
+  const email = "tianming.chen0424@gmail.com";
   const urlGithub = "https://github.com/Ming424";
   const urlLinkedin = "https://www.linkedin.com/in/tianming-chen/";
   const urlMailTo = "mailto:tianming.chen0424@gmail.com";
@@ -48,6 +50,12 @@ export default function Home() {
     }
   };
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText(email).then(() => {
+      setCopyState("Copied!");
+    });
+  };
+
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
@@ -60,7 +68,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="p-0 lg:px-8 lg:py-4 bg-gray-100 flex items-center justify-between  text-gray-900">
+      <div className="lg:px-8 lg:py-3 bg-gray-100 flex sticky top-0">
         <div className="hidden lg:flex gap-x-12 text-gray-400 ">
           <a
             href=""
@@ -102,12 +110,12 @@ export default function Home() {
       </div>
 
       <main className="bg-white dark:bg-gray-900 dark:text-white">
-        {/* CONTENT WRAPPER */}
-        <div className="px-2 md:px-20 lg:px-40 max-w-screen-2xl mx-auto">
-          <section className="">
-            {/* NAVBAR */}
+        {/* section template: px-2 md:px-20 max-w-screen-2xl mx-auto */}
+        {/* FIRST SECTION */}
+        <section className="">
+          <div className="px-2 md:px-20 max-w-screen-2xl mx-auto">
+            {/* Navbar */}
             <nav className="px-5 py-5 mb-0 sm:py-10 md:mb-12 flex justify-between">
-              {/* font-burtons was defined in tailwind config */}
               <h1
                 className="text-2xl pt-1 font-burtons"
                 onClick={() => window.location.reload()}
@@ -141,6 +149,7 @@ export default function Home() {
                 </li>
               </ul>
             </nav>
+            {/* mobile only */}
             <nav className="px-5 mb-0">
               <div
                 onClick={() => scrollToSection("projects")}
@@ -157,9 +166,9 @@ export default function Home() {
                 <h2 className="tx-name text-5xl py-2 text-transparent bg-clip-text  bg-gradient-to-r from-teal-400 to-blue-600 font-extrabold md:text-6xl py-6">
                   <span className="">Thierry Chen</span>
                 </h2>
-                <h3 className="text-2xl py-2 md:text-3xl">
+                <h3 className="font-mono text-2xl py-2 md:text-3xl">
                   Software Developer & Designer
-                  <div className="text-xl pt-2">Montreal</div>
+                  <div className="font-sans text-xl pt-2">Montreal</div>
                 </h3>
                 {/* max-w-wl for max width paragraph */}
                 <p className="text-md py-5 leading-8 text-gray-800 dark:text-white md:text-xl max-w-xl mx-auto hover:scale-105 transition duration-300">
@@ -212,187 +221,188 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* EXPERTISE */}
-          <section className="mt-10 md:mt-20 text-xl">
-            <div className="grid py-2 grid-cols-1 md:grid-cols-2 gap-4 ">
-              <div className="item-card item-green">
-                <div className="flex items-center">
-                  <SiSpring />
-                  &nbsp;Spring
-                </div>
-                <div className="font-light">bean, injection</div>
+        {/* SKILLS SECTION */}
+        <section className="font-mono px-2 md:px-20 max-w-screen-2xl mx-auto mt-10 md:mt-20 text-xl">
+          <div className="grid py-2 grid-cols-1 md:grid-cols-2 gap-4 ">
+            <div className="item-card item-green">
+              <div className="flex items-center">
+                <SiSpring />
+                &nbsp;Spring
               </div>
-              <div className="item-card item-language">
-                <div className="flex items-center">
-                  <BsFiletypeJava className="text-red" />
-                  &nbsp;Java
-                </div>
-                <div className="font-light">
-                  stream, thread, thread pool, synchornization
-                </div>
+              <div className="font-light">bean, injection</div>
+            </div>
+            <div className="item-card item-language">
+              <div className="flex items-center">
+                <BsFiletypeJava className="text-red" />
+                &nbsp;Java
               </div>
-              <div className="item-card item-language">
-                <div className="flex items-center">
-                  <SiPython />
-                  &nbsp;Python
-                </div>
-                <div className="font-light">leetcode</div>
-              </div>
-              <div className="item-card item-web">
-                <div className="flex items-center">
-                  <SiAngular />
-                  &nbsp;Angular
-                </div>
-                <div className="font-light">
-                  binding, lifecycle, injection, ts, responsive
-                </div>
-              </div>
-              <div className="item-card item-web">
-                <div className="flex items-center">
-                  <RiReactjsLine className="text-xl" />
-                  &nbsp;React
-                </div>
-                <div className="font-light">
-                  react hook, life cycle, responsive
-                </div>
-              </div>
-              <div className="item-card item-support">
-                <div className="flex items-center">
-                  <SiMicrosoftazure />
-                  &nbsp;Azure
-                </div>
-                <div className="font-light">practicing</div>
+              <div className="font-light">
+                stream, thread, thread pool, synchornization
               </div>
             </div>
-            <div className="grid py-2 grid-cols-4 md:grid-cols-6 gap-3 text-xs sm:text-base md:text-sm lg:text-lg">
-              <div className="item-card item-language">SQL</div>
-              <div className="item-card item-language">GO</div>
-              <div className="item-card item-web">Mongo</div>
-              <div className="item-card item-web">Vue</div>
-              <div className="item-card item-system">Docker</div>
-              <div className="item-card item-system">Ubuntu</div>
+            <div className="item-card item-language">
+              <div className="flex items-center">
+                <SiPython />
+                &nbsp;Python
+              </div>
+              <div className="font-light">leetcode</div>
             </div>
-            <div className="grid py-2 grid-cols-4 md:grid-cols-7 gap-3 text-xs sm:text-base md:text-sm lg:text-lg ">
-              <div className="item-card item-support">Mockito</div>
-              <div className="item-card item-support">Sonar</div>
-              <div className="item-card item-support">Postman</div>
-              <div className="item-card item-web">Tailwind CSS</div>
-              <div className="item-card item-design">Figma</div>
-              <div className="item-card item-design">Photoshop</div>
-
-              <div className="item-card item-system">Unity</div>
-            </div>
-          </section>
-
-          <section className="py-12 mt-12">
-            <h3 className="text-5xl py-1 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500 font-extrabold w-fit">
-              Experience
-            </h3>
-
-            {/* JOB */}
-            <div className="lg:flex gap-5 ">
-              {/* ZIMMER */}
-              <div className="bg-gradient-to-r from-blue-700 to-blue-600 shadow-lg shadow-blue-500/50 text-center text-white font-semibold py-10 px-4 rounded-xl my-10 flex-1 hover:brightness-105 hover:scale-105 transition duration-300">
-                <Image
-                  className="mx-auto"
-                  src={job4}
-                  width={90}
-                  height={90}
-                  alt=""
-                />
-                <div className="text-xl font-extrabold pt-8">Zimmer Biomet</div>
-                <div className="text-xs">Montreal, CA. Permanent</div>
-                <div className="text-lg font-semibold py-1">
-                  Software Developer
-                </div>
-                <p className="py-2">
-                  Deliver SaaS product PMP (Personalized Medical Portal) to ease
-                  the business transaction between information throughout
-                  different systems.
-                </p>
-                <h4 className="pt-4 pb-2 text-teal-200">Tech Stack</h4>
-                <p className="text-gray-100">Spring</p>
-                <p className="text-gray-100">Angular</p>
-                <p className="text-gray-100">Azure</p>
-                <p className="text-gray-100">SQL</p>
-                <p className="text-gray-100">Mockito</p>
+            <div className="item-card item-web">
+              <div className="flex items-center">
+                <SiAngular />
+                &nbsp;Angular
               </div>
-              {/* ERICSSON */}
-              <div className="bg-blue-500 shadow-md text-center text-white font-semibold py-10 px-4 rounded-xl my-10  flex-1 hover:brightness-105 hover:scale-105 transition duration-300">
-                <Image
-                  className="mx-auto"
-                  src={job3}
-                  width={70}
-                  height={70}
-                  alt=""
-                />
-                <h3 className="text-lg font-extrabold pt-8 pb-2">Ericsson</h3>
-                <div className="text-xs">Montreal, CA. Intern of 12</div>
-                <p className="py-2">
-                  Responsible for the test coverage of telemetry system and
-                  deliver daily passage for api regression test.
-                </p>
-                <h4 className="pt-4 pb-2 text-teal-200">Tech Stack</h4>
-                <p className="text-gray-100">Spring</p>
-                <p className="text-gray-100 ">Mockito</p>
-                <p className="text-gray-100">Postman</p>
-                <p className="text-gray-100">Ubuntu</p>
-              </div>
-              {/* FIERA */}
-              <div className="bg-blue-500 shadow-md text-center text-white font-semibold py-10 px-4 rounded-xl my-10  flex-1   hover:brightness-105 hover:scale-105 transition duration-300">
-                <Image
-                  className="mx-auto"
-                  src={job2}
-                  width={100}
-                  height={100}
-                  alt=""
-                />
-                <h3 className="text-lg font-extrabold pt-8 pb-2 ">
-                  Fiera Capital
-                </h3>
-                <div className="text-xs">Montreal, CA. Intern of 4</div>
-                <p className="py-2">
-                  Create and maintain automation script to accelerate and verify
-                  data transaction.
-                </p>
-                <h4 className="pt-4 pb-2 text-teal-200">Tech Stack</h4>
-                <p className="text-gray-100">Python</p>
-                <p className="text-gray-100">SQL</p>
-              </div>
-              {/* AIRBUS */}
-              <div className="bg-blue-500 shadow-md text-center text-white font-semibold py-10 px-4 rounded-xl my-10 flex-1  hover:brightness-105 hover:scale-105 transition duration-300">
-                <Image
-                  className="mx-auto pt-3"
-                  src={job1}
-                  width={100}
-                  height={100}
-                  alt=""
-                />
-                <h3 className="text-lg font-extrabold  pt-8 pb-2 ">Airbus</h3>
-                <div className="text-xs">Mirabel, CA. Intern of 4</div>
-                <p className="py-2">
-                  Sole completion of monitoring tool for airplain descrepency
-                  report that ease the workflow of liaison engineer team.
-                </p>
-                <h4 className="pt-4 pb-2 text-teal-200">Tech Stack</h4>
-                <p className="text-gray-100">React</p>
-                <p className="text-gray-100">SQL</p>
-                <p className="text-gray-100">PHP</p>
+              <div className="font-light">
+                binding, lifecycle, injection, ts, responsive
               </div>
             </div>
-          </section>
+            <div className="item-card item-web">
+              <div className="flex items-center">
+                <RiReactjsLine className="text-xl" />
+                &nbsp;React
+              </div>
+              <div className="font-light">
+                react hook, life cycle, responsive
+              </div>
+            </div>
+            <div className="item-card item-support">
+              <div className="flex items-center">
+                <SiMicrosoftazure />
+                &nbsp;Azure
+              </div>
+              <div className="font-light">practicing</div>
+            </div>
+          </div>
+          <div className="grid py-2 grid-cols-4 md:grid-cols-6 gap-3 text-xs sm:text-base md:text-sm lg:text-lg">
+            <div className="item-card item-language">SQL</div>
+            <div className="item-card item-language">GO</div>
+            <div className="item-card item-web">Mongo</div>
+            <div className="item-card item-web">Vue</div>
+            <div className="item-card item-system">Docker</div>
+            <div className="item-card item-system">Ubuntu</div>
+          </div>
+          <div className="grid py-2 grid-cols-4 md:grid-cols-7 gap-3 text-xs sm:text-base md:text-sm lg:text-lg ">
+            <div className="item-card item-support">Mockito</div>
+            <div className="item-card item-support">Sonar</div>
+            <div className="item-card item-support">Postman</div>
+            <div className="item-card item-web">Tailwind CSS</div>
+            <div className="item-card item-design">Figma</div>
+            <div className="item-card item-design">Photoshop</div>
 
-          {/* PLANS */}
-          <section className="section-plan h-screen">
-            <section className="text-gray-100 bg-gradient-to-r from-blue-900 from-15% to-blue-950 text-white overflow-hidden shadow-md shadow-blue-950/50 rounded-xl flex-1 my-5 grid grid-cols-1 md:grid-cols-3 hover:brightness-110 transition duration-300">
+            <div className="item-card item-system">Unity</div>
+          </div>
+        </section>
+
+        {/* JOB SECTION */}
+        <section className="py-12 mt-12 px-2 md:px-20 max-w-screen-2xl mx-auto">
+          <h3 className="text-5xl py-1 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500 font-extrabold w-fit">
+            Experience
+          </h3>
+          <div className="lg:flex gap-5 ">
+            {/* ZIMMER */}
+            <div className="bg-gradient-to-r from-blue-700 to-blue-600 shadow-lg shadow-blue-500/50 text-center text-white font-semibold py-10 px-4 rounded-xl my-10 flex-1 hover:brightness-105 hover:scale-105 transition duration-300">
+              <Image
+                className="mx-auto"
+                src={job4}
+                width={90}
+                height={90}
+                alt=""
+              />
+              <div className="text-xl font-extrabold pt-8">Zimmer Biomet</div>
+              <div className="text-xs">Montreal, CA. Permanent</div>
+              <div className="text-lg font-semibold py-1">
+                Software Developer
+              </div>
+              <p className="py-2">
+                Deliver SaaS product PMP (Personalized Medical Portal) to ease
+                the business transaction between information throughout
+                different systems.
+              </p>
+              <h4 className="pt-4 pb-2 text-teal-200">Tech Stack</h4>
+              <p className="text-gray-100">Spring</p>
+              <p className="text-gray-100">Angular</p>
+              <p className="text-gray-100">Azure</p>
+              <p className="text-gray-100">SQL</p>
+              <p className="text-gray-100">Mockito</p>
+            </div>
+            {/* ERICSSON */}
+            <div className="bg-blue-500 shadow-md text-center text-white font-semibold py-10 px-4 rounded-xl my-10  flex-1 hover:brightness-105 hover:scale-105 transition duration-300">
+              <Image
+                className="mx-auto"
+                src={job3}
+                width={70}
+                height={70}
+                alt=""
+              />
+              <h3 className="text-lg font-extrabold pt-8 pb-2">Ericsson</h3>
+              <div className="text-xs">Montreal, CA. Intern of 12</div>
+              <p className="py-2">
+                Responsible for the test coverage of telemetry system and
+                deliver daily passage for api regression test.
+              </p>
+              <h4 className="pt-4 pb-2 text-teal-200">Tech Stack</h4>
+              <p className="text-gray-100">Spring</p>
+              <p className="text-gray-100 ">Mockito</p>
+              <p className="text-gray-100">Postman</p>
+              <p className="text-gray-100">Ubuntu</p>
+            </div>
+            {/* FIERA */}
+            <div className="bg-blue-500 shadow-md text-center text-white font-semibold py-10 px-4 rounded-xl my-10  flex-1   hover:brightness-105 hover:scale-105 transition duration-300">
+              <Image
+                className="mx-auto"
+                src={job2}
+                width={100}
+                height={100}
+                alt=""
+              />
+              <h3 className="text-lg font-extrabold pt-8 pb-2 ">
+                Fiera Capital
+              </h3>
+              <div className="text-xs">Montreal, CA. Intern of 4</div>
+              <p className="py-2">
+                Create and maintain automation script to accelerate and verify
+                data transaction.
+              </p>
+              <h4 className="pt-4 pb-2 text-teal-200">Tech Stack</h4>
+              <p className="text-gray-100">Python</p>
+              <p className="text-gray-100">SQL</p>
+            </div>
+            {/* AIRBUS */}
+            <div className="bg-blue-500 shadow-md text-center text-white font-semibold py-10 px-4 rounded-xl my-10 flex-1  hover:brightness-105 hover:scale-105 transition duration-300">
+              <Image
+                className="mx-auto pt-3"
+                src={job1}
+                width={100}
+                height={100}
+                alt=""
+              />
+              <h3 className="text-lg font-extrabold  pt-8 pb-2 ">Airbus</h3>
+              <div className="text-xs">Mirabel, CA. Intern of 4</div>
+              <p className="py-2">
+                Sole completion of monitoring tool for airplain descrepency
+                report that ease the workflow of liaison engineer team.
+              </p>
+              <h4 className="pt-4 pb-2 text-teal-200">Tech Stack</h4>
+              <p className="text-gray-100">React</p>
+              <p className="text-gray-100">SQL</p>
+              <p className="text-gray-100">PHP</p>
+            </div>
+          </div>
+        </section>
+
+        {/* PLANS */}
+        <section className="section-plan">
+          <div className="text-blue-950 py-12 px-2 md:px-20 max-w-screen-2xl mx-auto">
+            <section className="frosted-glass shadow-md shadow-slate-900/50 rounded-xl flex-1 my-5 grid grid-cols-1 md:grid-cols-3">
               <div className="col-span-2 m-10">
                 <h1 className="text-2xl font-bold text-center flex items-center mx-auto justify-center">
                   <BsListTask className="pt-1" />
                   &nbsp;What I am doing right now
                 </h1>
-                <div className="text-gray-300 flex items-center mx-auto justify-center font-semibold">
+                <div className=" flex items-center mx-auto justify-center font-semibold">
                   <ul className="text-xl pl-1 sm:pl-10 pt-3 space-y-3 list-disc marker:text-blue-600">
                     <li>Learning Azure</li>
                     <li>
@@ -412,26 +422,28 @@ export default function Home() {
                   </ul>
                 </div>
               </div>
-              <div className="img-type-1 col-span-1 bg-black rounded-r-xl border-l-4 dark:border-black hover:border-l-2"></div>
+              <div className="img-type-1 col-span-1 rounded-r-xl"></div>
             </section>
 
             {/* DO LATER */}
-            <section className="mt-10 text-gray-100 bg-gradient-to-r from-blue-900 from-10% to-blue-950 text-white py-10 shadow-md shadow-blue-950/50 p-10 rounded-xl hover:brightness-110 transition duration-300">
-              <h1 className="text-3xl py-2 dark:text-white text-center flex items-center mx-auto justify-center">
+            <section className="frosted-glass p-10  shadow-md shadow-slate-900/50 rounded-xl">
+              <h1 className="text-3xl py-2  text-center flex items-center mx-auto justify-center">
                 Next Plan
               </h1>
-              <div className="pb-2 text-center text-xl  text-gray-300 list-disc dark:text-white">
-                <div className="flex justify-center flex items-center">
+              <div className="pb-2 text-center text-xl  list-disc ">
+                <div className="flex justify-center items-center">
                   <FaRobot />
                   &nbsp;AI and ML&nbsp;
                   <FaRobot />
                 </div>
               </div>
             </section>
-          </section>
+          </div>
+        </section>
 
-          {/*  */}
-          <section id="projects" className="mt-11">
+        {/* SHOWCASE  */}
+        {/* <section id="projects" className="mt-36">
+          <div className="px-2 md:px-20 max-w-screen-2xl mx-auto">
             <h3 className="text-5xl pb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500 font-extrabold w-fit">
               Projects
             </h3>
@@ -453,49 +465,90 @@ export default function Home() {
                 />
               </div>
             </div>
-          </section>
+          </div>
+        </section> */}
 
-          <section className="py-12 mt-12">
-            <h3 className="text-5xl py-1 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500 font-extrabold w-fit">
-              Project
-            </h3>
-          </section>
+        {/* BUILD WEBSITE */}
+        <section className="py-12 mt-12">
+          <div className="px-2 md:px-20 max-w-screen-2xl mx-auto">
+            <div className="flex flex-row text-3xl">
+              <h3 className="py-1 text-transparent bg-clip-text bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] font-extrabold w-fit">
+                Let me help you to design your dream website
+              </h3>
+              <span>&nbsp;🏗️</span>
+            </div>
 
-          {/*  */}
-          <section className="py-10">
-            <h1 className="text-xl py-2 dark:text-white text-center flex items-center mx-auto justify-center">
-              This page is powered by 🚀
-            </h1>
-            <div className="py-2   text-xl  text-gray-700 list-disc dark:text-white">
-              <div className="flex justify-center items-center flex-col gap-3 md:flex-row">
-                <div className="flex items-center">
-                  <SiReact />
-                  &nbsp;React
-                </div>
-                <div className="flex items-center">
-                  <SiNextdotjs />
-                  &nbsp;Next.js
-                </div>
-                <div className="flex items-center">
-                  <SiTailwindcss />
-                  &nbsp;Tailwind
-                </div>
-                <div className="flex items-center">
-                  <SiVercel />
-                  &nbsp;Vercel
-                </div>
-                <div className="flex items-center">
-                  <GiRainbowStar />
-                  &nbsp;my imagination
-                </div>
+            <p className="pt-2 font-serif">
+              I understand that your website is often the first impression your
+              customers have of your business, and I'm here to help you make it
+              the best it can be. Whether you need a simple portfolio website or
+              complexe e-commerce platform to demonstrate your product, I have
+              the skills and expertise to deliver. My process is simple and
+              effective. I start by listening to your goals and understanding
+              your audience, then I use my design and development skills to
+              create a website that not only looks great but also performs well.
+              I'm passionate about staying up to date with the latest trends and
+              technologies in web development, so you can trust that your
+              website will be modern and cutting-edge. If you're looking for a
+              skilled and creative website developer who can bring your ideas to
+              life, then I'm the right person for you. Don't hesitate to contact
+              me to discuss your project and get started on creating the website
+              of your dreams."
+            </p>
+
+            <div className="pt-10">
+              <div className="text-2xl mx-auto flex mx-auto justify-center font-semibold">
+                If you are interested about this collaboration
+              </div>
+              <div className="flex py-2 mx-auto justify-center">
+                Feel free to drop a message to my email!
+              </div>
+              <div className="flex py-2 mx-auto justify-center">
+                <button className="bg-gray-100 px-10 cursor-default text-gray-800 font-bold py-2 rounded-l">
+                  tianming.chen0424@gmail.com
+                </button>
+                <button
+                  onClick={handleCopy}
+                  className="bg-gray-300 after:bg-green-500 hover:bg-green-500 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r transition duration-100"
+                >
+                  {copyState}
+                </button>
               </div>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </main>
+
+      {/* FOOTER */}
+      <section className="py-6 bg-gray-500 w-auto">
+        <h1 className="text-xl py-2 text-white text-center flex mx-auto justify-center">
+          This page is powered by 🚀
+        </h1>
+        <div className="py-2 text-xl list-disc text-gray-100">
+          <div className="flex justify-center items-center flex-col gap-3 md:flex-row">
+            <div className="flex items-center">
+              <SiReact />
+              &nbsp;React
+            </div>
+            <div className="flex items-center">
+              <SiNextdotjs />
+              &nbsp;Next.js
+            </div>
+            <div className="flex items-center">
+              <SiTailwindcss />
+              &nbsp;Tailwind
+            </div>
+            <div className="flex items-center">
+              <SiVercel />
+              &nbsp;Vercel
+            </div>
+            <div className="flex items-center">
+              <GiRainbowStar />
+              &nbsp;my imagination
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
-}
-function onClickNotAvailable() {
-  throw new Error("Function not implemented.");
 }

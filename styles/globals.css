@@ -15,6 +15,7 @@ body {
 html {
   overflow: scroll;
   scroll-snap-type: y mandatory;
+  overflow-x: hidden;
 }
 
 /* dark mode transition */
@@ -138,23 +139,14 @@ a {
 .img-type-1 {
   background-image: url("../public/bg-img-1.png");
   background-size: cover;
-  max-width: 100%;
-  -webkit-transition: all 1s ease; /* Safari and Chrome */
-  -moz-transition: all 1s ease; /* Firefox */
-  -ms-transition: all 1s ease; /* IE 9 */
-  -o-transition: all 1s ease; /* Opera */
-  transition: all 1s ease;
-}
-
-.img-type-1:hover {
-  -webkit-transform: scale(1.25); /* Safari and Chrome */
-  -moz-transform: scale(1.25); /* Firefox */
-  -ms-transform: scale(1.25); /* IE 9 */
-  -o-transform: scale(1.25); /* Opera */
-  transform: scale(1.25);
 }
 
 .section-plan {
-  background-image: url("../public/bg-img-1.png");
-  padding: 0;
+  background: url("../public/bg-img-1.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.frosted-glass {
+  backdrop-filter: blur(20px);
 }
