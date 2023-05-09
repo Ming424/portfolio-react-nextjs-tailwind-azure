@@ -68,7 +68,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="lg:px-8 lg:py-3 bg-gray-100 flex sticky top-0">
+      <div className="lg:px-8 lg:py-3 bg-gray-100 flex top-0">
         <div className="hidden lg:flex gap-x-12 text-gray-400 ">
           <a
             href=""
