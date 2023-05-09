@@ -148,5 +148,5 @@ a {
 }
 
 .frosted-glass {
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(40px);
 }

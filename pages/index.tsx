@@ -20,7 +20,7 @@ import {
   SiVercel,
 } from "react-icons/si";
 import Image from "next/image";
-import deved from "../public/dev-ed-wave.png";
+import deved from "../public/profile.jpg";
 import job1 from "../public/job1.png";
 import job2 from "../public/job2.png";
 import job3 from "../public/job3.png";
@@ -30,6 +30,7 @@ import web1 from "../public/web1.png";
 import web2 from "../public/web2.png";
 import { title } from "process";
 
+// NPM RUN DEV
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   const [copyState, setCopyState] = useState("Copy");
@@ -37,7 +38,7 @@ export default function Home() {
   const urlGithub = "https://github.com/Ming424";
   const urlLinkedin = "https://www.linkedin.com/in/tianming-chen/";
   const urlMailTo = "mailto:tianming.chen0424@gmail.com";
-  const urlInstagram = "https://www.instagram.com/dream_ins_spiration/";
+  const urlInstagram = "https://www.instagram.com/inssphiration/";
   const urlResume =
     "https://drive.google.com/file/d/1ws_zF5NWkiuNjjOoplQPygGm3AyGORsH/view?usp=sharing";
 
@@ -509,7 +510,7 @@ export default function Home() {
                 </button>
                 <button
                   onClick={handleCopy}
-                  className="bg-gray-300 after:bg-green-500 hover:bg-green-500 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r transition duration-100"
+                  className="w-48 bg-gray-300 after:bg-green-500 hover:bg-green-500 hover:bg-gray-400 text-gray-800 font-bold py-3 rounded-r transition duration-100"
                 >
                   {copyState}
                 </button>
